@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Maze</title>
+    <script type = "text/javascript">
+        function plus(){
+            var d = document.getElementById("d1");
+            var x = parseFloat(d.innerHTML);
+            x = x+1;
+            d.innerHTML = x;
+        } 
+        function minus()
+         {
+            var d = document.getElementById("d1");
+            var x = parseFloat(d.innerHTML);
+            x = x-1;
+            d.innerHTML = x;
+         }
+         function mult()
+         {
+            var d = document.getElementById("d1");
+            var x = parseFloat(d.innerHTML);
+            x = x*2;
+            d.innerHTML = x;
+         }
+         function divi()
+         {
+            var d = document.getElementById("d1");
+            var x = parseFloat(d.innerHTML);
+            x = x/2;
+            d.innerHTML = x;
+         }
+    </script>
+</head>
+<body>
+    <input type = "button" id="bPlus" value = "PLUS 1" onclick="plus()"/>
+    <input type = "button" id="bMinus" value = "MINUS 1" onclick="minus()"/>
+    <div id = "d1"> 0 </div>
+    <input type = "button" id="bMul" value = "MULTIPLY BY 2" onclick="mult()"/>
+	<input type = "button" id="bDiv" value = "DIVIDE BY 2" onclick="divi()"/>
+</body>
+</html>

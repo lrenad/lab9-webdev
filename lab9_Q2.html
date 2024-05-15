@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Greeting</title>
+    <script type = "text/javascript">
+        var turn = 0; 
+        function change()
+         {
+		 var d = document.getElementById("d1");
+            if (turn == 0)
+            {
+               d.innerHTML = "Good Afternoon";
+               turn = 1;
+            }
+            else
+            {
+               d.innerHTML = "Good Morning";
+               turn = 0;
+            }
+         }
+    </script>
+</head>
+<body>
+    <input type = "button" id="b1" value = "Click me" onclick="change()"/>
+	<h1 id = "d1"> Good Morning </h1>
+</body>
+</html>

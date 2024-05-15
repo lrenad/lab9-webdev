@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image</title>
+    <style type = "text/css">
+        body { font-family: arial, sans-serif }
+        img {
+            background-color: #225599;
+            position: absolute;
+            top: 120px;
+            left: 10px;
+        }
+    </style>
+    <script type = "text/javascript">
+        var left = 10;
+        function start() {
+            var buttonL = document.getElementById("bL");
+            buttonL.addEventListener("click", playLeft, false);
+        }  
+        function playRight() { 
+            left = left + 100;
+            var i = document.getElementById("glass");
+            i.style.left = left + 'px';
+        }
+        function playLeft() {
+            if (left < 100) {
+                window.alert("Cannot move left");
+                return;
+            }
+            left = left - 100;
+            var i = document.getElementById("glass");
+            i.style.left = left + 'px';
+        }   
+        window.onload = start;
+    </script>
+</head>
+<body>
+    <h1> Move the image </h1>
+    <img id="glass" src="glass.jpg" height="150" />
+    <input type="button" id="bR" value="Move right" onclick="playRight()"/>
+    <input type="button" id="bL" value="Move left" />
+</body>
+</html>

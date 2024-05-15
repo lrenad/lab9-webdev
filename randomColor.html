@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Guessing Game</title>
+  <style>
+    body { font-family: sans-serif; margin: 20px; text-align: center; }
+    #color-display {
+      font-size: 2em;
+      margin-bottom: 15px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Color Guessing Game</h1>
+  <p id="color-display"></p>
+  <button id="guessBtn">Guess a Color</button>
+  <p id="message"></p>
+
+  <script>
+    var color = ["red", "blue", "yellow", "green", "black", "white"];
+
+    function start(){
+      var button = document.getElementById("guessBtn");
+      button.addEventListener("click", guessing, false);
+    }
+
+    function guessing() {
+      var randomColor = color[Math.floor(Math.random() * color.length)];
+      var guess = window.prompt("Guess a color either red, blue, yellow, green, black or white: ");
+
+      if (guess === randomColor) {
+        document.getElementById("message").textContent = "Correct! You guessed the right color.The color was " + randomColor + ".";
+      } else {
+        document.getElementById("message").textContent = "Wrong! Try again. The color was " + randomColor + ".";
+      }
+    }
+
+    window.addEventListener("load", start, false);
+  </script>
+</body>
+</html>
